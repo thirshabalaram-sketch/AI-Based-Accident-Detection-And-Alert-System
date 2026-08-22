@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accident Detection Dashboard</title>
+    <meta http-equiv="refresh" content="5">
+    <style>
+        body { font-family: Arial, sans-serif; background: #1a1a2e; color: #eee; padding: 20px; }
+        h1 { color: #ff4757; }
+        .card { background: #16213e; border-radius: 10px; padding: 15px; margin-bottom: 12px; border-left: 5px solid #555; }
+        .severe { border-left-color: #ff4757; }
+        .moderate { border-left-color: #ffa502; }
+        .normal { border-left-color: #2ed573; }
+        .label { font-size: 18px; font-weight: bold; }
+        .meta { color: #aaa; font-size: 14px; margin-top: 5px; }
+        .stats { display: flex; gap: 15px; margin-bottom: 20px; }
+        .stat-box { background: #0f3460; padding: 15px 25px; border-radius: 8px; text-align: center; }
+        .stat-num { font-size: 28px; font-weight: bold; }
+        a { color: #70a1ff; }
+    </style>
+</head>
+<body>
+    <h1>🚨 Accident Detection Control Room</h1>
+    <div class="stats">
+        <div class="stat-box"><div class="stat-num">{{ total }}</div>Total Events</div>
+        <div class="stat-box"><div class="stat-num">{{ severe_count }}</div>Severe</div>
+        <div class="stat-box"><div class="stat-num">{{ moderate_count }}</div>Moderate</div>
+    </div>
+
+    {% for event in events %}
+    <div class="card {{ event.css_class }}">
+        <div class="label">{{ event.label }}</div>
+        <div class="meta">
+            Time: {{ event.time }} | Speed: {{ event.speed }} km/h | 
+            Location: <a href="https://maps.google.com/?q={{ event.lat }},{{ event.lon }}" target="_blank">View on map</a>
+        </div>
+    </div>
+    {% else %}
+    <p>No events yet. Waiting for sensor data...</p>
+    {% endfor %}
+</body>
+</html>
