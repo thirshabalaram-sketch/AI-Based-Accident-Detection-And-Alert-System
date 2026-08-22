@@ -1,0 +1,23 @@
+# Core data science / ML
+numpy
+pandas
+scikit-learn
+xgboost
+matplotlib
+seaborn
+joblib
+
+# Backend server
+flask
+
+# SMS alert integration
+twilio
+
+# Hardware / serial communication
+pyserial
+
+# Notebook support (optional, used during development)
+jupyterlab
+
+# Deep learning (only if using the TensorFlow-based extensions)
+tensorflow-cpu
