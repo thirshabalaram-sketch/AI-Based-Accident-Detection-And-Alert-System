@@ -233,12 +233,6 @@ See `model/confusion_matrix.png` and `model/feature_importance.png` for detailed
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
-
----
-
 ## 🙏 Acknowledgments
 
 - Department of Electronics and Communication Engineering
